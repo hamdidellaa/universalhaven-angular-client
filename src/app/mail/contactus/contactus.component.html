@@ -1,0 +1,88 @@
+<section class="page-title" style="background-image:url(images/background/5.jpg);">
+  <div class="auto-container">
+      <div class="inner-box">
+          <h1>contact</h1>
+          <ul class="bread-crumb">
+              <li><a href="index.html">Home</a></li>
+              <li>contact</li>
+          </ul>
+      </div>
+  </div>
+</section>
+<!--End Page Title-->
+<!--Contact Section-->
+<section class="contact-section">
+  <div class="auto-container">
+
+      <div class="contact-info">
+          <div class="row clearfix">
+
+              <div class="info-block col-md-4 col-sm-6 col-xs-12">
+                  <div class="inner-box">
+                      <div class="icon-box"><span class="flaticon-house-outline"></span></div>
+                      <h4>VISIT</h4>
+                      Collins Street West,121 <br> King Street, Melbourne.
+                  </div>
+              </div>
+
+              <div class="info-block col-md-4 col-sm-6 col-xs-12">
+                  <div class="inner-box">
+                      <div class="icon-box"><span class="flaticon-technology-1"></span></div>
+                      <h4>Call</h4>
+                      (1800) 123 4567 <br> (1800) 123 4568
+                  </div>
+              </div>
+
+              <div class="info-block col-md-4 col-sm-6 col-xs-12">
+                  <div class="inner-box">
+                      <div class="icon-box"><span class="flaticon-envelope-1"></span></div>
+                      <h4>Mail</h4>
+                      info@universalhavencharity.com <br> info@universalhaven.com
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+      <h2>Say Hello</h2>
+      <!--Contact Form-->
+      <div class="contact-form">
+       
+              <div class="row clearfix">
+                  
+                  <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input [(ngModel)]="mail.mailSender" type="email" placeholder="Email *"   id="floatEmail"  ngModel required email #floatEmail="ngModel" [ngModelOptions]="{updateOn: 'blur'}" required>
+                  
+                <small class="form-text text-muted danger" *ngIf="!floatEmail.valid && (floatEmail.dirty || floatEmail.touched)">Please enter a valid email!</small>
+
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input [(ngModel)]="mail.subject" type="text"  placeholder="Subject *"    ngModel required #subject="ngModel" [ngModelOptions]="{updateOn: 'blur'}" required>
+                       <small class="form-text text-muted danger" *ngIf="!subject.valid && (subject.dirty || subject.touched)">This field is required!</small>
+                  </div>
+                                   
+
+                  <div class="column col-md-12 col-sm-12 col-xs-12">
+                      <div class="form-group">
+                          <textarea rows="3" id="floattextArea" name="floattextArea" ngModel required #textArea="ngModel" [ngModelOptions]="{updateOn: 'blur'}" [(ngModel)]="mail.content" placeholder="Type Your Message"></textarea>
+                                    <small class="form-text text-muted danger" *ngIf="!textArea.valid && (textArea.dirty || textArea.touched)">This field is required!</small>
+                      </div>
+                  </div>
+
+                  <div class="column col-md-12 col-sm-12 col-xs-12 text-center">
+                      <div class="form-group">
+                          <button (click)="sendMail()" class="theme-btn btn-style-one">Submit Now</button>
+                      </div>
+                  </div>
+
+              </div>
+
+          
+      </div>
+      <!--End Contact Form-->
+<p *ngIf="testmail" class="text-vald">Your message has been sent, we will contact you shortly, thank you</p>
+<p *ngIf="problemMail" class="text-muted">Problem has occurred , please try again</p>
+  </div>
+</section>
+
+

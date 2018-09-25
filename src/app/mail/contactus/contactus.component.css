@@ -1,0 +1,10 @@
+.text-muted {
+    color: #ea2553 !important;
+}
+.text-vald {
+    color: #06d666 !important;
+}
+.ng-touched.ng-invalid {
+	border-color: #ea2553!important;
+    background: none;
+}
